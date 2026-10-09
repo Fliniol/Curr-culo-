@@ -1,0 +1,318 @@
+{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  background-color: #0d0d0d; /* Fundo escuro de reserva enquanto o vídeo carrega */
+  overflow-x: hidden;   
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -1; /* Fica estritamente no fundo */
+}
+
+/* Card Principal Centralizado com Vidro Fosco */
+.curriculo-card {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+/* Cabeçalho */
+.curriculo-header h1 {
+  margin: 0;
+  text-align: center;
+  color: #111;
+  font-size: 1.8rem;
+}
+
+/* Topo (Foto + Botão Popover) */
+.top-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  width: 100%;
+  position: relative;
+}
+
+.curriculo-midia {
+  width: 250px;
+  height: 250px;
+  flex: 0 0 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid rgba(249, 250, 250, 0.44);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.curriculo-bio-container {
+  flex: 1;
+  min-width: 0;
+  transition: opacity 0.25s ease;
+}
+
+.curriculo-bio-container.is-dimmed {
+  opacity: 0.18;
+}
+
+.curriculo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botão Popover Interativo */
+.popover-wrapper {
+  position: absolute;
+  z-index: 20;
+  left: 235px;
+  top: -10px;
+}
+
+.icon-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: #0056b3;
+}
+
+.popover-wrapper.active .icon-btn {
+  transform: rotate(45deg);
+  background-color: #dc3545;
+}
+
+.popover-content {
+  position: absolute;
+  left: 18px;
+  top: -36px;
+  width: 0;
+  max-width: min(220px, calc(100vw - 110px));
+  opacity: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  border: 1px solid #eee;
+  z-index: 10;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+}
+
+.popover-wrapper.active .popover-content {
+  width: 200px;
+  opacity: 1;
+}
+
+.popover-header {
+  padding: 10px 14px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: nowrap;
+}
+
+.popover-menu {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+}
+
+.popover-menu li a {
+  display: block;
+  padding: 8px 14px;
+  color: #444;
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.popover-menu li a:hover {
+  background-color: #f0f4f8;
+  color: #007bff;
+}
+
+/* Bio e "Ler mais" */
+.hotel-bio {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.more-text {
+  display: none;
+}
+
+.hotel-bio.expanded .more-text {
+  display: inline;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 6px;
+  text-decoration: underline;
+}
+
+/* Seções Gerais */
+.curriculo-secao h2 {
+  font-size: 1.2rem;
+  color: #111;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+/* Tags de Conhecimentos */
+.lista-tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lista-tags li {
+  background-color: #000000;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Projetos */
+.lista-projetos {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.projeto-item {
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 12px 16px;
+  border-radius: 10px;
+  border-left: 4px solid #007bff;
+}
+
+.projeto-item h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+}
+
+.projeto-item p {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.link-repo {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.link-repo:hover {
+  text-decoration: underline;
+}
+
+/* Cursos */
+.lista-cursos li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.lista-cursos li a:hover {
+  text-decoration: underline;
+}
+
+/* Painel de informações pessoais */
+.painel-dados {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(300px, 85%);
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.painel-dados.ativo {
+  display: block;
+}
+
+.fechar-dados {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Ajustes para Celular */
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  .curriculo-card { padding: 20px; }
+  .top-section { flex-direction: column; align-items: center; gap: 16px; }
+  .curriculo-midia { width: 140px; height: 140px; flex: 0 0 140px; }
+  .popover-wrapper { left: 125px; top: -10px; }
+  .curriculo-header h1 { font-size: 1.35rem; }
+  .lista-projetos { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Christopher Feitosa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Vídeo de background com caminho ajustado -->
+    <video autoplay muted loop playsinline id="bg-video" preload="auto">
+        <source src="video/night-city.mp4" type="video/mp4">
+        O teu navegador não suporta vídeos em HTML5.
+    </video>
+
+    <div class="curriculo-card"> 
+
+        <header class="curriculo-header">
+            <h1>Christopher Feitosa do Monte</h1>
+        </header>
+
+        <div class="top-section">
+            <div class="curriculo-midia">
+                <img src="imagem/Imagem do WhatsApp de 2025-10-18 à(s) 12.03.05_eabfe926.jpg" alt="Christopher Feitosa do Monte" class="curriculo-img">
+            </div>
+
+            <div class="popover-wrapper" id="hotelPopover">
+                <button type="button" class="icon-btn" id="popoverToggle" aria-label="Ver mais opções" aria-expanded="false">
+                    <span class="icon">+</span>
+                </button>
+                
+                <div class="popover-content">
+                    <div class="popover-header">Contato / Redes</div>
+                    <ul class="popover-menu">
+                        <li><a href="#" onclick="selectOption('nome')">Nome</a></li>
+                        <li><a href="#" onclick="selectOption('Email')">Email</a></li>
+                        <li><a href="#" onclick="selectOption('idade')">Idade</a></li>
+                        <li><a href="#" onclick="selectOption('telefone')">Telefone</a></li>
+                        <li><a href="https://www.linkedin.com/in/christopher-feitosa-8502a638b/?isSelfProfile=true" target="_blank" onclick="selectOption('linkedin')">🔗 LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="painel-dados" class="painel-dados">
+                <button id="fechar-dados" class="fechar-dados">×</button>
+                <h3 id="titulo-dados">Informações pessoais</h3>
+                <p id="conteudo-dados"></p>
+            </div>
+
+            <div class="curriculo-bio-container" id="bioContainer">
+                <h2>Bio</h2>
+                <p class="hotel-bio">
+                    Meu Nome é Christopher Feitosa do Monte, Olá! Sou estudante de Análise e Desenvolvimento de Sistemas pelo SENAC (previsão de conclusão em 07/2027) e apaixonado por resolver problemas através do código. Tenho focado minha evolução técnica no desenvolvimento Back-End, trabalhando com linguagens como C#, Java, Python e SQL (MySQL), além de possuir sólida base em HTML/CSS, JavaScript e React.
+                    <span class="more-text" id="moreText">
+                        Em meus projetos práticos e acadêmicos, já desenvolvi aplicações com padrão DAO para persistência de dados relacionais, sistemas de gerenciamento de cadastros e aplicações web interativas. Também trago no meu histórico a experiência como desenvolvedor no Programa Bolsa Jovem. Estou em busca de oportunidades de estágio em desenvolvimento de software para colaborar em projetos desafiadores e continuar evoluindo como profissional.
+                    </span>
+                    <button class="read-more-btn" id="readMoreBtn" onclick="toggleReadMore()">Ler mais...</button>
+                </p>
+            </div>
+        </div>
+
+        <section class="curriculo-secao">
+            <h2>Principais Conhecimentos</h2>
+            <ul class="lista-tags">
+                <li>C#</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>SQL (MySQL)</li>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </section>
+
+        <section class="curriculo-secao">
+            <h2>Projetos Pessoais</h2>
+            <div class="lista-projetos">
+                <div class="projeto-item">
+                    <h3>Gerenciamento de Contatos</h3> 
+                    <p>Desenvolvimento de uma aplicação robusta em Java para a gestão estruturada de contatos profissionais e pessoais. O sistema utiliza o padrão DAO para persistência de dados em um banco de dados MySQL, garantindo a separação entre a lógica de negócio e o acesso aos dados.</p>
+                    <a href="https://github.com/Fliniol/Gerenciamente-de-Contatos-JAVASCRIPT-" target="_blank" class="link-repo">Ver no GitHub →</a>
+                </div>
+
+                <div class="projeto-item">
+                    <h3>Cadastro de Produtos</h3>
+                    <p>Desenvolvimento de uma aplicação de consola em Java para a gestão de inventário simples, focada na manipulação de arrays de objetos e lógica de cálculo financeiro. O sistema permite a entrada dinâmica de dados e fornece um resumo detalhado dos itens registados.</p>
+                    <a href="https://github.com/Fliniol/cadastro-de-produtos" target="_blank" class="link-repo">Ver no GitHub →</a>            
+                </div>
+
+                <div class="projeto-item">
+                    <h3>Banco de Dados</h3>
+                    <p>Desenvolvimento de um banco de dados relacional para o sistema de cadastro, focado na integridade referencial e na otimização de consultas complexas. O projeto demonstra a capacidade de modelar dados do mundo real através de tabelas relacionadas e extrair informações úteis via scripts SQL.</p>
+                    <a href="https://github.com/Fliniol/Banco-de-Dados-SQL-" target="_blank" class="link-repo">Ver no GitHub →</a>
+                </div>
+
+                <div class="projeto-item">
+                    <h3>Site sobre notícia de jogos</h3>
+                    <p>Desenvolvimento de um site interativo utilizando HTML, CSS e JavaScript, com foco na apresentação de notícias sobre jogos. O projeto inclui recursos de navegação intuitiva, design responsivo e integração com APIs externas para atualização dinâmica de conteúdo.</p>
+                    <a href="https://github.com/Fliniol/site-de-noticia" target="_blank" class="link-repo">Ver no GitHub →</a>
+                </div>
+
+                <div class="projeto-item">
+                    <h3>Site sobre Floricultura</h3>
+                    <p>Desenvolvimento de um site para uma empresa de floricultura, com foco na apresentação de produtos e serviços. O projeto utiliza tecnologias web modernas para criar uma experiência de usuário atraente e responsiva.</p>
+                    <a href="https://github.com/Fliniol/site-para-floricultura" target="_blank" class="link-repo">Ver no GitHub →</a>
+                </div>
+
+                <div class="projeto-item">
+                    <h3>TaskNest</h3>
+                    <p>TaskNest é um site fictício criado para uma startup de tecnologia dos botões com gradiente brilhante, cantos arredondados e sombras internas.</p>
+                    <a href="https://github.com/Fliniol/site-de-tecnologia" target="_blank" class="link-repo">Ver no GitHub →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="curriculo-secao">
+            <h2>Experiências e Atividades</h2>
+            <p>Bolsista do Programa Bolsa Jovem como desenvolvedor (2019 - 2021)</p>
+        </section>
+
+        <section class="curriculo-secao">
+            <h2>Idiomas</h2>
+            <ul>
+                <li>Português - Nativo</li>
+                <li>Inglês - Avançado</li>
+                <li>Espanhol - Avançado</li>
+            </ul>
+        </section>
+
+        <section class="curriculo-secao">
+            <h2>Atividades Complementares</h2>
+            <ul class="lista-cursos">
+                <li><a href="https://www.udemy.com/course/python-3-do-zero-ao-avancado/" target="_blank">Curso de Python 3 do básico ao avançado - com projetos reais</a></li>
+                <li><a href="https://www.udemy.com/course/curso-algoritmos-logica-de-programacao/" target="_blank">Algoritmos e Lógica de Programação - O Curso COMPLETO</a></li>
+                <li><a href="https://www.udemy.com/course/aprenda-sql-do-zero/" target="_blank">Aprenda SQL do Zero!</a></li>
+                <li><a href="https://www.udemy.com/course/curso-web-design-fundamentos-aprenda-html-css-e-javascript/" target="_blank">Web Frontend Fundamentos HTML5 CSS3 JavaScript + 10Projetos</a></li>
+                <li><a href="https://www.udemy.com/course/formacao-front-end-html-css-javascript-react-e/" target="_blank">Formação Front-end - HTML, CSS, JavaScript, React</a></li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
