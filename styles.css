@@ -312,7 +312,10 @@ body {
   .curriculo-card { padding: 20px; }
   .top-section { flex-direction: column; align-items: center; gap: 16px; }
   .curriculo-midia { width: 140px; height: 140px; flex: 0 0 140px; }
-  .popover-wrapper { left: 125px; top: -10px; }
+  .popover-wrapper { left: 225px; top: -10px; }
   .curriculo-header h1 { font-size: 1.35rem; }
-  .lista-projetos { grid-template-columns: 1fr; }
+  .lista-projetos { grid-template-columns: repeat(3, 1fr); display: grid; gap: 1px; }
+  .projeto-item { min-width: 0; background: rgba(255, 255, 255, 0.7); padding: 6px 12px; border-radius: 5px; border-left: 2px solid #007bff;}
+  .projeto-item h3 { margin: 0 0 6px 0; font-size: 0.8rem;}
+  .projeto-item p { margin: 0 0 4px 0; font-size: 0.56rem; color: #444; }
 }
